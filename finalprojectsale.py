@@ -4,7 +4,7 @@ from sklearn import datasets
 from sklearn.linear_model import LinearRegression
 
 st.write("""
-# Flight
+# Sales
 """)
 
 st.sidebar.header('User Input Parameters')
