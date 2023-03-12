@@ -32,8 +32,8 @@ loaded_model = pickle.load(open("iris_model.h5", "rb"))
 prediction = loaded_model.predict(df)
 
 st.subheader('Prediction')
-st.write(prediction)
+#st.write(prediction)
 st.write(prediction[0])
-st.write(type(prediction))
+#st.write(type(prediction))
 
 
