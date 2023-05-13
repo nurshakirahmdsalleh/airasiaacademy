@@ -31,7 +31,7 @@ elif option=='T n C':
         'Churn Status': [0, 0, 0, 1]
         }))
 
- else:
+else:
     'Starting a long computation...'
     
     latest_iteration = st.empty()
