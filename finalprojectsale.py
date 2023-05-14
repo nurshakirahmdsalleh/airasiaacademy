@@ -36,6 +36,3 @@ prediction = clf.predict(df)
 
 st.subheader('Prediction')
 st.write(f"{prediction[0]:.2f}")
-#st.write(df.style.format({"Predictions": "{:.2f}"}))
-#st.write(df.style.format("{:.2}"))
-#st.write(prediction.style.format(precision=2))
