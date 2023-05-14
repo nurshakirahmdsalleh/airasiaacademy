@@ -35,4 +35,5 @@ clf.fit(X, Y)
 prediction = clf.predict(df)
 
 st.subheader('Prediction')
-st.write(prediction)
+#st.write(df.style.format({"Predictions": "{:.2f}"}))
+st.write(prediction.style.format({"Predictions": "{:.2f}"}))
