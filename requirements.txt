@@ -3,5 +3,3 @@ pandas
 streamlit
 scikit-learn
 numpy
-turtle
-tkinter 
