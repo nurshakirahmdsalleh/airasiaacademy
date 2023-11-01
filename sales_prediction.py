@@ -34,7 +34,7 @@ st.subheader('Scaled Data')
 scaled_features = scalerFeatures.fit_transform(df)
 dfscaled_features = pd.DataFrame(scaled_features)
 dfscaled_features.columns = ['TV','Radio','Newspaper']
-st.write("TV:",dfscaled_features.TV)
+st.write("TV:",dfscaled_features.loc[0]['TV'])
 
 #prediction = loaded_model.predict(dfscaled_features)
 #st.write("Scaled Prediction",prediction)
