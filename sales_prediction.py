@@ -36,8 +36,8 @@ dfscaled_features = pd.DataFrame(scaled_features)
 dfscaled_features.columns = ['TV','Radio','Newspaper']
 st.write(dfscaled_features)
 
-#prediction = loaded_model.predict(dfscaled_features)
-#st.write("Scaled Prediction",prediction)
+prediction = loaded_model.predict(dfscaled_features)
+st.write("Scaled Prediction",prediction)
 #df_prediction = pd.DataFrame(prediction)
 #unscale_prediction = scalerSales.inverse_transform(df_prediction)
 #dfunscaled_prediction = pd.DataFrame(unscale_prediction)
