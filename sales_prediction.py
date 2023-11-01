@@ -27,9 +27,13 @@ df = user_input_features()
 st.subheader('User Input Parameters')
 st.write(df)
 
-scaled_features = scalerFeatures.fit_transform(df)
-prediction = loaded_model.predict(scaled_features)
-unscale_prediction = scalerSales.inverse_transform(pd.DataFrame(prediction))
+def prediction_function(unscale_data):
+    scaled_features = scalerFeatures.fit_transform(unscale_data)
+    prediction = loaded_model.predict(scaled_features)
+    unscale_prediction = scalerSales.inverse_transform(pd.DataFrame(prediction))
+    return unscale_prediction
+
+predicted_value = prediction_function(df)
 
 st.subheader('Sales Prediction')
-st.write(f"{unscale_prediction[0][0]:.2f}")
+st.write(f"{predicted_value[0][0]:.2f}")
