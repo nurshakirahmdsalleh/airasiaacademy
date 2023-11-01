@@ -22,7 +22,7 @@ df = user_input_features()
 st.subheader('User Input Parameters')
 st.write(df)
 
-loaded_model = pickle.load(open("Sales-Advertising.h5", "rb"))
+loaded_model = pickle.load(open("sales-advertising-model.h5", "rb"))
 
 prediction = loaded_model.predict(df)
 
