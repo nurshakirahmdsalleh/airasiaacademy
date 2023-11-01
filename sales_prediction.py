@@ -20,17 +20,15 @@ def user_input_features():
             'Radio': radio,
             'Newspaper': newspaper}
     features = pd.DataFrame(data, index=[0])
-    featuresscaled = pd.DataFrame(data, index=[0])
-    scaled_features = scalerFeatures.fit_transform(df)
-    return features, featuresscaled
+    return features
 
-df, df_scaled = user_input_features()
+df = user_input_features()
 
 st.subheader('User Input Parameters')
 st.write(df)
 
-prediction = loaded_model.predict(featuresscaled)
-
+scaled_features = scalerFeatures.fit_transform(df)
+prediction = loaded_model.predict(scaled_features)
 unscale_prediction = scalerSales.inverse_transform(pd.DataFrame(prediction))
 
 st.subheader('Sales Prediction')
