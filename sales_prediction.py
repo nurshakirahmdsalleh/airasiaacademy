@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 
-st.header("Sales Prediction App`")
+st.title("Sales Prediction App")
 st.write("This app predicts the sales based on three advertising channel features")
 
 st.sidebar.header('User Input Parameters')
