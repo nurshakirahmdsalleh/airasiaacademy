@@ -30,8 +30,11 @@ st.write(df)
 prediction = loaded_model.predict(df)
 st.write(f"{prediction}")
 
-#scaled_features = scalerFeatures.fit_transform(df)
-#prediction = loaded_model.predict(scaled_features)
+scaled_features = scalerFeatures.fit_transform(df)
+dfscaled_features = pd.DataFrame(scaled_features)
+dfscaled_features.columns = ['TV','Radio','Newspaper']
+prediction = loaded_model.predict(dfscaled_features)
+st.write("Prediction",prediction)
 #df_prediction = pd.DataFrame(prediction)
 #unscale_prediction = scalerSales.inverse_transform(df_prediction)
 #st.subheader('Sales Prediction')
