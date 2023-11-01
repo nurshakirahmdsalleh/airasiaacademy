@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
+from sklearn import preprocessing
 
 st.title("Sales Prediction App")
 st.write("This app predicts the sales based on three advertising channel features")
@@ -24,7 +25,10 @@ st.write(df)
 
 loaded_model = pickle.load(open("sales-advertising-model.h5", "rb"))
 
-prediction = loaded_model.predict(df)
+scaler = pickle.load(open("sales-scaler.pkl", "rb"))
+scaled_features = scaler.fit_transform(df)
+
+prediction = loaded_model.predict(scaled_features)
 
 st.subheader('Sales Prediction')
 st.write(f"{prediction[0]:.2f}")
