@@ -36,4 +36,5 @@ def prediction_function(unscale_data):
 predicted_value = prediction_function(df)
 
 st.subheader('Sales Prediction')
-st.write(f"{predicted_value[0][0]:.2f}")
+#st.write(f"{predicted_value[0][0]:.2f}")
+st.write(f"{predicted_value}")
