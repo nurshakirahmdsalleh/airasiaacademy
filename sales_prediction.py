@@ -22,9 +22,10 @@ def user_input_features():
             'Newspaper': newspaper}
     features = pd.DataFrame(data, index=[0])
     scaled_features = scalerFeatures.fit_transform(features)
-    scaled_features.columns = features.columns
+    dfscaled_features = pd.DataFrame(scaled_features)
+    dfscaled_features.columns = features.columns
     
-    return scaled_features
+    return dfscaled_features
 
 df = user_input_features()
 
