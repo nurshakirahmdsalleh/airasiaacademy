@@ -3,6 +3,10 @@ import pandas as pd
 import pickle
 from sklearn import preprocessing
 
+loaded_model = pickle.load(open("sales-advertising-model.h5", "rb"))
+scalerFeatures = pickle.load(open("features-scaler.pkl", "rb"))
+scalerSales = pickle.load(open("sales-scaler.pkl", "rb"))
+
 st.title("Sales Prediction App")
 st.write("This app predicts the sales based on three advertising channel features")
 
@@ -16,21 +20,16 @@ def user_input_features():
             'Radio': radio,
             'Newspaper': newspaper}
     features = pd.DataFrame(data, index=[0])
-    return features
+    featuresscaled = pd.DataFrame(data, index=[0])
+    scaled_features = scalerFeatures.fit_transform(df)
+    return features, featuresscaled
 
-df = user_input_features()
+df,df_scaled = user_input_features()
 
 st.subheader('User Input Parameters')
 st.write(df)
 
-loaded_model = pickle.load(open("sales-advertising-model.h5", "rb"))
-
-scalerFeatures = pickle.load(open("features-scaler.pkl", "rb"))
-scalerSales = pickle.load(open("sales-scaler.pkl", "rb"))
-
-scaled_features = scalerFeatures.fit_transform(df)
-
-prediction = loaded_model.predict(scaled_features)
+prediction = loaded_model.predict(featuresscaled)
 
 unscale_prediction = scalerSales.inverse_transform(pd.DataFrame(prediction))
 
