@@ -35,5 +35,5 @@ prediction = loaded_model.predict(scaled_features)
 unscale_prediction = scalerSales.inverse_transform(prediction[0])
 st.write(unscale_prediction)
 
-#st.subheader('Sales Prediction')
+st.subheader('Sales Prediction')
 #st.write(f"{unscale_prediction[3]:.2f}")
