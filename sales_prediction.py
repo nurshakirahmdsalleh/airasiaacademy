@@ -21,11 +21,7 @@ def user_input_features():
             'Radio': radio,
             'Newspaper': newspaper}
     features = pd.DataFrame(data, index=[0])
-    scaled_features = scalerFeatures.fit_transform(features)
-    dfscaled_features = pd.DataFrame(scaled_features)
-    dfscaled_features.columns = features.columns
-    
-    return dfscaled_features
+    return features
 
 df = user_input_features()
 
