@@ -25,14 +25,15 @@ st.write(df)
 
 loaded_model = pickle.load(open("sales-advertising-model.h5", "rb"))
 
-scaler = pickle.load(open("sales-scaler.pkl", "rb"))
-scaled_features = scaler.fit_transform(df)
+scalerFeatures = pickle.load(open("features-scaler.pkl", "rb"))
+scalerSales = pickle.load(open("sales-scaler.pkl", "rb"))
+
+scaled_features = scalerFeatures.fit_transform(df)
 
 prediction = loaded_model.predict(scaled_features)
 
-df['Sales'] = prediction[0]
-#unscale_prediction = scaler.inverse_transform(df)
-st.write(df)
+unscale_prediction = scalerSales.inverse_transform(prediction[0])
+st.write(unscale_prediction)
 
 #st.subheader('Sales Prediction')
 #st.write(f"{unscale_prediction[3]:.2f}")
