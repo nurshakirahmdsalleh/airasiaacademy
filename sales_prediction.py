@@ -24,7 +24,7 @@ def user_input_features():
     scaled_features = scalerFeatures.fit_transform(df)
     return features, featuresscaled
 
-df,df_scaled = user_input_features()
+df, df_scaled = user_input_features()
 
 st.subheader('User Input Parameters')
 st.write(df)
