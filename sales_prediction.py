@@ -35,4 +35,4 @@ prediction = loaded_model.predict(scaled_features)
 unscale_prediction = scalerSales.inverse_transform(pd.DataFrame(prediction))
 
 st.subheader('Sales Prediction')
-st.write(f"{unscale_prediction[3]:.2f}")
+st.write(f"{unscale_prediction[0]:.2f}")
