@@ -27,6 +27,4 @@ loaded_model = pickle.load(open("sales-advertising-model.h5", "rb"))
 prediction = loaded_model.predict(df)
 
 st.subheader('Prediction')
-st.write(prediction)
-st.write(type(prediction))
-
+st.write(prediction[0])
