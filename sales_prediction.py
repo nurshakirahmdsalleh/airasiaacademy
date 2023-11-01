@@ -30,5 +30,8 @@ scaled_features = scaler.fit_transform(df)
 
 prediction = loaded_model.predict(scaled_features)
 
+df['Sales'] = prediction[0]
+unscale_prediction = scaler.inverse_transform(df)
+
 st.subheader('Sales Prediction')
-st.write(f"{prediction[0]:.2f}")
+st.write(f"{unscale_prediction[3]:.2f}")
