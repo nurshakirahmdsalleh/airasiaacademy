@@ -28,7 +28,7 @@ loaded_model = pickle.load(open("sales-advertising-model.h5", "rb"))
 scaler = pickle.load(open("sales-scaler.pkl", "rb"))
 scaled_features = scaler.fit_transform(df)
 
-#prediction = loaded_model.predict(scaled_features)
+prediction = loaded_model.predict(scaled_features)
 
 df['Sales'] = prediction[0]
 #unscale_prediction = scaler.inverse_transform(df)
