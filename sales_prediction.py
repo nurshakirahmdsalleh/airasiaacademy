@@ -31,7 +31,10 @@ scalerSales = pickle.load(open("sales-scaler.pkl", "rb"))
 scaled_features = scalerFeatures.fit_transform(df)
 
 prediction = loaded_model.predict(scaled_features)
-dfprediction = pd.DataFrame(prediction[0])
+st.write(prediction)
+
+dfprediction = pd.DataFrame(prediction)
+st.write(dfprediction)
 
 unscale_prediction = scalerSales.inverse_transform(dfprediction)
 st.write(unscale_prediction)
