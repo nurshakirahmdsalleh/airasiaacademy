@@ -36,7 +36,7 @@ prediction = modelGaussianIris.predict(df)
 prediction_proba = modelGaussianIris.predict_proba(df)
 
 st.subheader('Class labels and their corresponding index number')
-st.write(X.unique())
+st.write(Y.unique())
 
 st.subheader('Prediction')
 st.write(prediction)
