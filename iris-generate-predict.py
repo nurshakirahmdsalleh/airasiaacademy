@@ -26,7 +26,7 @@ st.subheader('User Input parameters')
 st.write(df)
 
 data = sns.load_dataset('iris')
-X = data.drop(['species'])
+X = data.drop(['species'],axis=1)
 Y = data.species.copy()
 
 modelGaussianIris = GaussianNB()
