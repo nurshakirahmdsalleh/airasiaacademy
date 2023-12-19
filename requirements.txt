@@ -2,5 +2,5 @@ altair
 pandas
 streamlit
 scikit-learn
---upgrade --force-reinstall seaborn
+seaborn
 numpy
