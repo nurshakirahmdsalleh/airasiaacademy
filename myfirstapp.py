@@ -21,3 +21,9 @@ if show:
     'Students': ['John', 'Lofa', 'Siti', 'Amy'],
     'Attendance Status': ['yes', 'yes', 'yes', 'no']
     }))
+
+elif option=='map':
+    map_data = pd.DataFrame(
+    np.random.randn(1000, 2) / [50, 50] + [3.1242, 101.6861],
+    columns=['lat', 'lon'])
+    st.map(map_data)
